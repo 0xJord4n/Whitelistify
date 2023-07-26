@@ -10,9 +10,10 @@ A Cloudflare worker that can be used to obtain a Merkle proof from a list of Eth
 ## How to use ?
 
 1. Fill array in `src/addresses.ts` with addresses
-2. Install dependencies with `npm i`
-3. Deploy the worker with `npm run deploy`
-4. Test worker endpoint with a GET request at worker-url/?address=0x...
+2. (Optional) You can use your own CORS origin by replacing CORS_ORIGIN value in `src/worker.ts`
+3. Install dependencies with `npm i`
+4. Deploy the worker with `npm run deploy`
+5. Test worker endpoint with a GET request at worker-url/?address=0x...
 
 ## Contributing
 
