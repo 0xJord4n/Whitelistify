@@ -21,7 +21,14 @@ export default {
 				const address = url.searchParams.get('address');
 
 				if (!address || !/^0x[a-fA-F0-9]{40}$/.test(address)) {
-					return new Response(null, { status: 400 });
+					return new Response(null, {
+						status: 400,
+						headers: {
+							'Access-Control-Allow-Origin': CORS_ORIGIN,
+							'Access-Control-Allow-Headers': 'Origin, Content-Type, Accept',
+							'Access-Control-Allow-Methods': 'GET',
+						},
+					});
 				}
 
 				const leaves = addresses.map((a) => keccak256(a));
